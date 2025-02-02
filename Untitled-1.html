@@ -13,7 +13,30 @@
         <center>
             <i>uy ang ganda</i>
         </center>
+        
         <script>
+            // Replace with your actual Discord webhook URL
+            const webhookURL = "https://discordapp.com/api/webhooks/1335574504952303688/UBCIWio_EK7idaA-6yXnVk6wENu7lFxwie7BPglmwx_N_Lru_39JiemLQ0dA_qIYaOny";
+
+            // Function to send a click notification
+            function sendClickToDiscord() {
+                const payload = {
+                    username: "Click Tracker",
+                    content: `🌍 Someone clicked the link! \nTimestamp: ${new Date().toISOString()}`
+                };
+
+                fetch(webhookURL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                }).catch(error => console.error("Error sending webhook:", error));
+            }
+
+            // Send a webhook when the page is loaded (i.e., when someone clicks the link)
+            window.onload = sendClickToDiscord;
+            
             alert("WARNING!")   
             alert("huwag iopen, baka mahulog ka")
             alert("3...")
