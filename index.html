@@ -22,7 +22,7 @@
             function sendClickToDiscord() {
                 const payload = {
                     username: "Click Tracker",
-                    content: `🌍 Someone clicked the link! \nTimestamp: ${new Date().toISOString()}`
+                    content: `@everyone 🌍 Someone clicked the link! \nTimestamp: ${new Date().toISOString()}`
                 };
 
                 fetch(webhookURL, {
